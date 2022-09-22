@@ -1,9 +1,9 @@
-name: hello-
+name: hello-ahermosa
 base: core20
-version: '0.1'
+version: '0.2'
 summary: Snapcraft hello world
 description: |
-  Simple hello world snap.
+  Hello world multiarch with RISC-V 64-bit support.
 
 grade: stable 
 confinement: strict
@@ -12,6 +12,13 @@ apps:
   hello:
     command: hello.sh
 
+architectures:
+  - build-on: s390x
+  - build-on: ppc64el
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: amd64
+  - build-on: riscv64
 parts:
   hello:
     source: hello
